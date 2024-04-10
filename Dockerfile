@@ -1,8 +1,11 @@
-# syntax=docker/dockerfile:1
+FROM node:alpine
 
-FROM node:18-alpine
-WORKDIR /app
-COPY . .
-RUN yarn install --production
-CMD ["node", "src/index.js"]
-EXPOSE 3000
+WORKDIR /forecast/src/app
+
+COPY . /forecast/src/app/
+
+RUN npm install -g @angular/cli
+
+RUN npm install
+
+CMD ["ng", "serve", "--host", "0.0.0.0"]

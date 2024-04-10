@@ -17,7 +17,8 @@ public class ForecastService {
         Request request = new Request.Builder().url(apiUrl).build();
 
         try (Response response = client.newCall(request).execute()) {
-            if (!response.isSuccessful()) throw new Exception("Unexpected code " + response);
+            if (!response.isSuccessful())
+                throw new Exception("Unexpected code " + response);
             return response.body().string();
         }
     }

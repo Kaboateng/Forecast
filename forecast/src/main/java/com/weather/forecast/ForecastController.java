@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = {"http://localhost:4201/"})
+@CrossOrigin(origins = { "http://localhost:4201/" })
 
 @RestController
 public class ForecastController {
@@ -14,7 +14,7 @@ public class ForecastController {
     private final ForecastService forecastService = new ForecastService();
 
     @GetMapping("/weather")
-    public String getForecast(@RequestParam String zipCode){
+    public String getForecast(@RequestParam String zipCode) {
         try {
             return forecastService.getCurrentForecast(zipCode);
         } catch (Exception e) {

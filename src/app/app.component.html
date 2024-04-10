@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather</title>
 </head>
+
 <body>
-    <h2>Weather by Zip Code</h2>
-    <div>
-        <label for="zipCodeInput">Enter the Zip Code:</label>
-        <input type="text" id="zipCodeInput">&nbsp;
-        <button (click)="getForecast()">Submit</button>
-    </div>
-    <div id="weatherResult"></div>
-    <div *ngIf="weatherData">
-        <h3>Weather Details</h3>
-        <p>Location: {{ weatherData.location.name }}, {{ weatherData.location.region }}, {{ weatherData.location.country }}</p>
-        <p>Temperature: {{ weatherData.current.temp_f }}°F</p>
-        <p>Condition: {{ weatherData.current.condition.text }}</p>
-      </div>
+  <h2>Weather by Zip Code</h2>
+  <div>
+    <label for="zipCodeInput">Enter the Zip Code:</label>
+    <input type="text" id="zipCodeInput">&nbsp;
+    <button (click)="getForecast()">Submit</button>
+  </div>
+  <div id="weatherResult"></div>
+  <div *ngIf="weatherData">
+    <h3>Weather Details</h3>
+    <p>Location: {{ weatherData.location.name }}, {{ weatherData.location.region }}, {{ weatherData.location.country }}
+    </p>
+    <p>Temperature: {{ weatherData.current.temp_f }}°F</p>
+    <p>Condition: {{ weatherData.current.condition.text }}</p>
+  </div>
 </body>
+
 </html>

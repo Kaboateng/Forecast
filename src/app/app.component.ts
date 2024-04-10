@@ -10,7 +10,6 @@ export class AppComponent {
   title = 'forecast';
   zipCode: string = '';
   weatherData: any;
-  msg: string = '';
 
   constructor(private http: HttpClient) { }
 

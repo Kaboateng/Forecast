@@ -8,32 +8,16 @@
 <body>
     <h2>Weather by Zip Code</h2>
     <div>
-        <label for="zipCodeInput">Enter Zip Code:</label>
-        <input type="text" id="zipCodeInput">
-        <button onclick="getWeather()">Submit</button>
+        <label for="zipCodeInput">Enter the Zip Code:</label>
+        <input type="text" id="zipCodeInput">&nbsp;
+        <button (click)="getForecast()">Submit</button>
     </div>
     <div id="weatherResult"></div>
-
-    <script>
-        function getWeather() {
-            var zipCode = document.getElementById("zipCodeInput").value;
-
-            fetch("/weather?zipCode=" + zipCode)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("weatherResult").innerHTML = `
-                        <h3>Weather Details</h3>
-                        <p>Location: ${data.location.name}</p>
-                        <p>Temperature: ${data.current.temp_c}°C</p>
-                        <p>Condition: ${data.current.condition.text}</p>
-                    `;
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    document.getElementById("weatherResult").innerHTML = "Error fetching weather data";
-                });
-        }
-    </script>
+    <div *ngIf="weatherData">
+        <h3>Weather Details</h3>
+        <p>Location: {{ weatherData.location.name }}, {{ weatherData.location.region }}, {{ weatherData.location.country }}</p>
+        <p>Temperature: {{ weatherData.current.temp_f }}°F</p>
+        <p>Condition: {{ weatherData.current.condition.text }}</p>
+      </div>
 </body>
 </html>
-

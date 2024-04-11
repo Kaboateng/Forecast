@@ -17,8 +17,7 @@
   <div id="weatherResult"></div>
   <div *ngIf="weatherData">
     <h3>Weather Details</h3>
-    <p>Location: {{ weatherData.location.name }}, {{ weatherData.location.region }}, {{ weatherData.location.country }}
-    </p>
+    <p>Location: {{ weatherData.location.name }}, {{ weatherData.location.region }}, {{ weatherData.location.country }}</p>
     <p>Temperature: {{ weatherData.current.temp_f }}°F</p>
     <p>Condition: {{ weatherData.current.condition.text }}</p>
   </div>

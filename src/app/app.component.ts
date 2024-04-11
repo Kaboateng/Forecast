@@ -15,8 +15,7 @@ export class AppComponent {
 
   getForecast() {
     const zipCodeInput: HTMLInputElement = document.getElementById("zipCodeInput") as HTMLInputElement;
-    const aZipCode: string = zipCodeInput.value;
-    this.zipCode = aZipCode;
+    this.zipCode = zipCodeInput.value;
     this.http.get<any>('http://localhost:8080/weather?zipCode=' + this.zipCode)
       .subscribe(data => {
         this.weatherData = data;

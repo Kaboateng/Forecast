@@ -1,1 +1,1 @@
-Coding exercise for INADEV: Display weather via zip code
+Coding exercise: Display weather via zip code using a weather API
